@@ -2,5 +2,44 @@
 font = Hack 10
 
 [colors]
-foreground = rgba(220, 220, 220, 1)
-background = rgba(20, 20, 45, 0.85)
+
+# special
+foreground      = #e0dbb7
+foreground_bold = #e0dbb7
+cursor          = #e0dbb7
+background      = rgba(42, 31, 29, 0.85)
+
+
+
+# black
+color0  = #573d26
+color8  = #9b6c4a
+
+# red
+color1  = #be2d26
+color9  = #e84627
+
+# green
+color2  = #6ba18a
+color10 = #95d8ba
+
+# yellow
+color3  = #e99d2a
+color11 = #d0d150
+
+# blue
+color4  = #5a86ad
+color12 = #b8d3ed
+
+# magenta
+color5  = #ac80a6
+color13 = #d19ecb
+
+# cyan
+color6  = #74a6ad
+color14 = #93cfd7
+
+# white
+color7  = #e0dbb7
+color15 = #fff9d5
+
