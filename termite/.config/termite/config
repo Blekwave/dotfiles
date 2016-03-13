@@ -1,0 +1,6 @@
+[options]
+font = Hack 10
+
+[colors]
+foreground = rgba(220, 220, 220, 1)
+background = rgba(20, 20, 45, 0.85)
