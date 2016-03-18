@@ -7,6 +7,7 @@ set $mod Mod4
 set $term "termite"
 set $launcher rofi -show run -hlbg "#352517" -bc "#352517" -fg "#352517" -font "Droid Sans Italic 16" -o 85
 font pango:Droid Sans Italic 9
+set $lock i3lock
 
 
 # STARTUP APPLICATIONS
@@ -31,6 +32,7 @@ client.placeholder      #000000     #ffffff     #ffffff     #e99d2a
 # LAUNCH AND KILL BINDINGS
 bindsym $mod+Return exec $term
 bindsym $mod+d exec $launcher
+bindsym $mod+Control+l exec $lock
 bindsym $mod+Shift+q kill
 
 
