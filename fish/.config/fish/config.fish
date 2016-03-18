@@ -9,6 +9,9 @@ for file in $includes_dir/*.fish
     . $file
 end
 
-# Initialize ssh-agent
-start_agent
-
+# Start X at login
+if status --is-login
+    if test -z "$DISPLAY" -a $XDG_VTNR -eq 1
+        exec startx -- -keeptty
+    end
+end
