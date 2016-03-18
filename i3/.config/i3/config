@@ -5,7 +5,7 @@
 # ESSENTIAL SETTINGS
 set $mod Mod4
 set $term "termite"
-set $launcher "dmenu_run"
+set $launcher rofi -show run -hlbg "#352517" -bc "#352517" -fg "#352517" -font "Droid Sans Italic 16" -o 85
 font pango:Droid Sans Italic 9
 
 
