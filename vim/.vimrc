@@ -75,6 +75,7 @@
     " Folds
     set foldenable
     set foldmethod=syntax
+    set foldlevel=999
 
     " Set split direction for :split and :vsplit
     set splitbelow

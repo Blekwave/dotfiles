@@ -37,3 +37,9 @@
         let g:airline_right_sep=' '
     " }
 " }}}
+
+
+" PROGRAMMING PLUGINS - relative to language syntax {{{
+    " Comment toggling
+    Plug 'tpope/vim-commentary'
+" }}}
