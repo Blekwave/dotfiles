@@ -2,8 +2,8 @@
 " <blek.net@gmail.com>
 
 " # PLUGINS via vim-plug {{{
-    call plug#begin('~/.vim/plugged')
-        source ~/.config/vim/plugs.vim
+    call plug#begin('~/.config/nvim/plugged')
+        source ~/.config/nvim/plugs.vim
     call plug#end()
 " }}}
 
