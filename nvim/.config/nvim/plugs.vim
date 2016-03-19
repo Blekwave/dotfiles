@@ -1,4 +1,4 @@
-" Blek's vimmy vimrc's plugin stuff
+" Blek's nvimmy nvimrc's plugin stuff
 " <blek.net@gmail.com>
 
 " This file is not supposed to be used by itself. Rather, it should be sourced
