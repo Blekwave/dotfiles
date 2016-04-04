@@ -8,7 +8,7 @@
 " GENERAL PLUGINS - appearance, interface elements and editor functionality {{{
     " Color scheme
     Plug 'xiaody/thornbird.vim'
-    
+
     " Allows usage of gVim colorschemes in terminal Vim
     Plug 'godlygeek/csapprox'
 
@@ -22,7 +22,7 @@
     Plug 'myusuf3/numbers.vim' " {
         " Toggle between absolute and relative numbering manually
         nnoremap <F3> :NumbersToggle<CR>
-        nnoremap <F4> :NumbersOnOff<CR> 
+        nnoremap <F4> :NumbersOnOff<CR>
     " } Possibly resource-intensive.
 
     " Airline - status bar revamp, tab/buffer bar
@@ -42,4 +42,14 @@
 " PROGRAMMING PLUGINS - relative to language syntax {{{
     " Comment toggling
     Plug 'tpope/vim-commentary'
+
+    " Fold updating
+    Plug 'Konfekt/FastFold'
+
+    " Smart auto-completion
+    if has('python3') " Shougo/deoplete.nvim {
+        Plug 'Shougo/deoplete.nvim'
+        let g:deoplete#enable_at_startup = 1
+    endif " }
+
 " }}}
