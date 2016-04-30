@@ -1,5 +1,5 @@
 alias gst 'git status'
-alias gc 'git commit'
+alias gc 'git commit --verbose'
 alias gp 'git push'
 alias gl 'git pull'
 alias ga 'git add'

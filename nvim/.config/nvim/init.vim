@@ -107,3 +107,15 @@
     " Make movement commands wrap between lines
     set whichwrap+=<,>,h,l
 " }}}
+
+" # BINDINGS (temporary) {{{
+    " Smart way to move between windows
+    map <C-j> <C-W>j
+    map <C-k> <C-W>k
+    map <C-h> <C-W>h
+    map <C-l> <C-W>l
+
+    " Treat long lines as break lines (useful when moving around in them)
+    map j gj
+    map k gk
+" }}}
