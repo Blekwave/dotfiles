@@ -14,19 +14,18 @@
 
     " Parse modelines in files
     set modeline
+    set clipboard=unnamedplus
+
 " }}}
 
 
 " # FILES, LOADING AND SAVING {{{
     set fileformats=unix,dos,mac
-
-    " :W saves file as super user (no more permission errors!)
-    command W w !sudo tee % > /dev/null
 " }}}
 
 
 " # EDITOR APPEARANCE {{{
-    colorscheme thornbird
+    colorscheme gruvbox
 
     " Enable syntax highlighting
     syntax enable
@@ -36,13 +35,15 @@
 
     " Tell Vim this terminal has a dark background and 256 color support
     set background=dark
-    set t_Co=256
 
     " Case-insensitive wildmenu
     set wildignorecase
 
     " Show current position
     set ruler
+
+    " Highlight current line
+    set cursorline
 
     " Highlight matching brackets
     set showmatch
@@ -61,8 +62,7 @@
     set laststatus=2
 
     " Folds
-    set foldenable
-    set foldmethod=syntax
+    set foldmethod=indent
     set foldlevel=999
 
     " Set split direction for :split and :vsplit
@@ -85,12 +85,10 @@
     set softtabstop=4
     set shiftwidth=4
     set expandtab
+    set shiftround
 
-    " Copy indent from previous line
-    set autoindent
-
-    " Try to be smart about indents (see :help smartindent for more details)
-    set smartindent
+    " Figure out indentation by itself
+    filetype indent on
 
     " Show trailing whitespace
     set list
@@ -118,4 +116,7 @@
     " Treat long lines as break lines (useful when moving around in them)
     map j gj
     map k gk
+
+    nmap <silent> <leader>ev :edit $MYVIMRC<CR>
+    nmap <silent> <leader>sv :source $MYVIMRC<CR>
 " }}}

@@ -7,29 +7,24 @@
 
 " GENERAL PLUGINS - appearance, interface elements and editor functionality {{{
     " Color scheme
-    Plug 'xiaody/thornbird.vim'
-
-    " Allows usage of gVim colorschemes in terminal Vim
-    Plug 'godlygeek/csapprox'
+    Plug 'morhetz/gruvbox'
 
     " Surround text or edit surroundings with brackets, parens, tags and more
     Plug 'tpope/vim-surround'
 
     " Automatically add matching surround characters
-    Plug 'cohama/lexima.vim'
+    Plug 'jiangmiao/auto-pairs'
 
     " Alternate between relative and absolute line numbers intelligently
     Plug 'myusuf3/numbers.vim' " {
         " Toggle between absolute and relative numbering manually
         nnoremap <F3> :NumbersToggle<CR>
-        nnoremap <F4> :NumbersOnOff<CR>
     " } Possibly resource-intensive.
 
     " Airline - status bar revamp, tab/buffer bar
     Plug 'vim-airline/vim-airline' " {
         Plug 'vim-airline/vim-airline-themes'
         let g:airline#extensions#tabline#enabled = 1
-        let g:airline_theme='ubaryd'
 
         " I don't use Powerline fonts. If you do, comment the following lines
         " to use Powerline symbols.
@@ -50,6 +45,7 @@
     if has('python3') " Shougo/deoplete.nvim {
         Plug 'Shougo/deoplete.nvim'
         let g:deoplete#enable_at_startup = 1
+        inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+        inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
     endif " }
-
 " }}}
