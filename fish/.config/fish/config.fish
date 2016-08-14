@@ -3,6 +3,10 @@
 
 set -g -x fish_greeting ''
 
+# Add /usr/local/bin/ to path
+
+set -g -x PATH /usr/local/bin $PATH
+
 # Load code on startup
 set includes_dir $HOME/.config/fish/include
 for file in $includes_dir/*.fish
