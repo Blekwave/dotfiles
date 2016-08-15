@@ -6,6 +6,7 @@
 set $mod Mod4
 set $term "termite"
 set $launcher exec fish -c "rofi -show run -hlbg \"#352517\" -bc \"#352517\" -fg \"#352517\" -font \"Droid Sans Italic 16\" -o 85"
+set $regionscreenshot exec fish -c "maim -s --bordersize=1 ~/screenshots/(date +%F-%T).png"
 font pango:Droid Sans Italic 9
 set $lock i3lock
 
@@ -34,6 +35,7 @@ bindsym $mod+Return exec $term
 bindsym $mod+d exec $launcher
 bindsym $mod+Control+l exec $lock
 bindsym $mod+Shift+q kill
+bindsym Ctrl+Print $regionscreenshot
 
 
 # FOCUS AND MOVEMENT BINDINGS
