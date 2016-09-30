@@ -21,11 +21,14 @@
 
 " # FILES, LOADING AND SAVING {{{
     set fileformats=unix,dos,mac
+    let g:tex_flavor = "latex"
+    au BufNewFile,BufRead *.cl set filetype=cool
 " }}}
 
 
 " # EDITOR APPEARANCE {{{
     colorscheme gruvbox
+    set termguicolors
 
     " Enable syntax highlighting
     syntax enable
@@ -118,5 +121,10 @@
     map k gk
 
     nmap <silent> <leader>ev :edit $MYVIMRC<CR>
+    nmap <silent> <leader>ep :edit ~/.config/nvim/plugs.vim<CR>
     nmap <silent> <leader>sv :source $MYVIMRC<CR>
+
+
+    nnoremap <F6> :set hlsearch!<CR>
+
 " }}}

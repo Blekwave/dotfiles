@@ -15,6 +15,14 @@
     " Automatically add matching surround characters
     Plug 'jiangmiao/auto-pairs'
 
+    " Motion on crack
+    Plug 'justinmk/vim-sneak' " {
+        let g:sneak#streak = 1
+    " }
+
+    " Async fuzzy finder
+    Plug 'junegunn/fzf.vim'
+
     " Alternate between relative and absolute line numbers intelligently
     Plug 'myusuf3/numbers.vim' " {
         " Toggle between absolute and relative numbering manually
@@ -36,7 +44,9 @@
 
 " PROGRAMMING PLUGINS - relative to language syntax {{{
     " Comment toggling
-    Plug 'tpope/vim-commentary'
+    Plug 'tpope/vim-commentary' " {
+        autocmd FileType cool setlocal commentstring=--\ %s
+    " }
 
     " Fold updating
     Plug 'Konfekt/FastFold'
@@ -48,4 +58,35 @@
         inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
         inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
     endif " }
+
+    " Snippet engine
+    Plug 'Shougo/neosnippet.vim' " {
+        " And, of course, the snippets themselves
+        Plug 'Shougo/neosnippet-snippets'
+        imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+        smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+    " }
+
+
+    " LaTeX goodies
+    Plug 'lervag/vimtex' " {
+        " Deoplete vimtex patterns
+        if !exists('g:deoplete#omni#input_patterns')
+            let g:deoplete#omni#input_patterns = {}
+        endif
+        let g:deoplete#omni#input_patterns.tex = '\\(?:'
+            \ .  '\w*cite\w*(?:\s*\[[^]]*\]){0,2}\s*{[^}]*'
+            \ . '|\w*ref(?:\s*\{[^}]*|range\s*\{[^,}]*(?:}{)?)'
+            \ . '|hyperref\s*\[[^]]*'
+            \ . '|includegraphics\*?(?:\s*\[[^]]*\]){0,2}\s*\{[^}]*'
+            \ . '|(?:include(?:only)?|input)\s*\{[^}]*'
+            \ . '|\w*(gls|Gls|GLS)(pl)?\w*(\s*\[[^]]*\]){0,2}\s*\{[^}]*'
+            \ . '|includepdf(\s*\[[^]]*\])?\s*\{[^}]*'
+            \ . '|includestandalone(\s*\[[^]]*\])?\s*\{[^}]*'
+            \ .')'
+    " }
+
+
+    " Cool language support
+    Plug 'vim-scripts/cool.vim'
 " }}}
