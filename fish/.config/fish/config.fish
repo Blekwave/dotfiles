@@ -19,3 +19,5 @@ if status --is-login
         exec startx -- -keeptty
     end
 end
+
+set -g fish_prompt_pwd_dir_length 6
