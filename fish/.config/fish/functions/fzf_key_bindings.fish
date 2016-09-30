@@ -1,0 +1,1 @@
+/home/blek/.fzf/shell/key-bindings.fish
