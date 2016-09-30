@@ -5,9 +5,9 @@
 # ESSENTIAL SETTINGS
 set $mod Mod4
 set $term "termite"
-set $launcher exec fish -c "rofi -show run -hlbg \"#352517\" -bc \"#352517\" -fg \"#352517\" -font \"Droid Sans Italic 16\" -o 85"
+set $launcher exec fish -c "rofi -show run -hlbg \"#172635\" -bc \"#172635\" -fg \"#172635\" -font \"Droid Sans Italic 16\" -o 85"
 set $regionscreenshot exec fish -c "maim -s --bordersize=1 ~/screenshots/(date +%F-%T).png"
-font pango:Droid Sans Italic 9
+font pango:Droid Sans 9
 set $lock i3lock
 
 
@@ -23,10 +23,10 @@ new_window normal 1
 
 ## Window colors
 #                       border      backgr.     text        indicator
-client.focused          #2a1f1d     #352517     #e0dbb7     #e99d2a
-client.focused_inactive #111111     #444444     #e0dbb7     #e99d2a
+client.focused          #242424     #172635     #FFFDD7     #e99d2a
+client.focused_inactive #111111     #444444     #FFFDD7     #e99d2a
 client.unfocused        #111111     #444444     #888888     #e99d2a
-client.urgent           #111111     #573d26     #d0d150     #e99d2a
+client.urgent           #111111     #263F57     #FFFDD7     #e99d2a
 client.placeholder      #000000     #ffffff     #ffffff     #e99d2a
 
 
@@ -130,7 +130,7 @@ bar {
             background  #181818
             statusline  #ffffff
 #                               border  backgr  text
-            focused_workspace   #777777 #444444 #d0d150
+            focused_workspace   #777777 #444444 #dedede
             active_workspace    #333333 #222222 #cccccc
             inactive_workspace  #181818 #181818 #cccccc
             urgent_workspace    #e84627 #444444 #e84627
