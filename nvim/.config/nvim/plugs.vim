@@ -89,4 +89,7 @@
 
     " Cool language support
     Plug 'vim-scripts/cool.vim'
+
+    " Fish script support
+    Plug 'dag/vim-fish'
 " }}}
