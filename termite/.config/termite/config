@@ -7,7 +7,7 @@ font = Hack 10
 foreground      = #e6e1dc
 foreground_bold = #e6e1dc
 cursor          = #e6e1dc
-background      = #2b2b2b
+background      = rgba(43, 43, 43, 0.75)
 
 # black
 color0  = #2b2b2b
