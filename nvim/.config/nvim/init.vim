@@ -14,7 +14,9 @@
 
     " Parse modelines in files
     set modeline
-    set clipboard=unnamedplus
+    if (executable('pbcopy') || executable('xclip') || executable('xsel')) && has('clipboard')
+        set clipboard=unnamedplus
+    endif
 
 " }}}
 
