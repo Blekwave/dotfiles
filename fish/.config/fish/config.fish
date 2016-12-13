@@ -24,4 +24,4 @@ end
 
 set -g fish_prompt_pwd_dir_length 6
 
-set -gx TERM xterm-color
+set -gx TERM xterm-256color
