@@ -3,7 +3,57 @@
 " Blek's vimmy .vimrc 2.0
 " <blek.net@gmail.com>
 
-set termguicolors
+
+" GVIM-SPECIFIC {{{
+if has('gui_running')
+  set guifont=Hack\ 10
+  set guioptions-=m  "remove menu bar
+  set guioptions-=T  "remove toolbar
+  set guioptions-=r  "remove right-hand scroll bar
+  set guioptions-=L  "remove left-hand scroll bar
+endif
+" }}}
+
+" GENERAL SETTINGS {{{
+let mapleader = ","
+let g:mapleader = ","
+
+" Parse modelines in files
+set modeline
+if (executable('pbcopy') || executable('xclip') || executable('xsel')) && has('clipboard')
+    set clipboard=unnamedplus
+endif
+
+" }}}
+
+" FILES, LOADING AND SAVING {{{
+set fileformats=unix,dos,mac
+let g:tex_flavor="latex"
+" }}}
+
+" TEXT AND WHITESPACE {{{
+" 4-wide soft tabs
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set shiftround
+
+" Make movement commands wrap between lines
+set whichwrap+=<,>,h,l
+
+" }}}
+
+" BINDS {{{
+" Treat long lines as break lines (useful when moving around in them)
+map j gj
+map k gk
+
+nmap <silent> <leader>ev :edit $MYVIMRC<CR>
+nmap <silent> <leader>sv :source $MYVIMRC<CR>
+
+nnoremap <F6> :set hlsearch!<CR>
+" }}}
 
 " PLUGINS {{{
 call plug#begin('~/.vim/plugged')
@@ -57,6 +107,9 @@ Plug 'tpope/vim-commentary' " {
     autocmd FileType cool setlocal commentstring=--\ %s
 " }
 
+" Emmet: *that* plugin
+Plug 'mattn/emmet-vim'
+
 " Fold updating
 Plug 'Konfekt/FastFold'
 
@@ -89,25 +142,16 @@ Plug 'dag/vim-fish'
 call plug#end()
 " }}}
 
-" GENERAL SETTINGS {{{
-let mapleader = ","
-let g:mapleader = ","
-
-" Parse modelines in files
-set modeline
-if (executable('pbcopy') || executable('xclip') || executable('xsel')) && has('clipboard')
-    set clipboard=unnamedplus
+let s:work_file = "~/.vim/work.vim"
+if filereadable(glob("~/.vim/work.vim"))
+    source ~/.vim/work.vim
 endif
 
-" }}}
-
-" FILES, LOADING AND SAVING {{{
-set fileformats=unix,dos,mac
-let g:tex_flavor="latex"
-" }}}
 
 " EDITOR APPEARANCE {{{
-colorscheme gruvbox
+
+  set termguicolors
+  colorscheme gruvbox
 
 " Enable syntax highlighting
 syntax enable
@@ -163,44 +207,8 @@ set mouse=a
 
 " }}}
 
-" TEXT AND WHITESPACE {{{
-" 4-wide soft tabs
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
-set shiftround
-
-" Figure out indentation by itself
-
-" Show trailing whitespace
-set list
-set listchars=trail:·,tab:»-
-
-
-" Automatically trim trailing whitespace
-func! DeleteTrailingWS()
-    exe "normal mz"
-    %s/\s\+$//ge
-    exe "normal `z"
-endfunc
-autocmd BufWrite * :call DeleteTrailingWS()
-
-" Make movement commands wrap between lines
-set whichwrap+=<,>,h,l
-
-" }}}
-
-" BINDS {{{
-" Treat long lines as break lines (useful when moving around in them)
-map j gj
-map k gk
-
-nmap <silent> <leader>ev :edit $MYVIMRC<CR>
-nmap <silent> <leader>sv :source $MYVIMRC<CR>
-
-nnoremap <F6> :set hlsearch!<CR>
-" }}}
-
 " Good idea to load this one last -- it can take a relevant performance toll
 filetype plugin indent on
+
+set list!
+set listchars=trail:·,tab:»·
