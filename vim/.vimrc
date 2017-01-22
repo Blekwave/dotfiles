@@ -52,6 +52,9 @@ map k gk
 nmap <silent> <leader>ev :edit $MYVIMRC<CR>
 nmap <silent> <leader>sv :source $MYVIMRC<CR>
 
+"Remove all trailing whitespace by pressing F5
+nnoremap <leader>rw :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
 nnoremap <F6> :set hlsearch!<CR>
 " }}}
 
@@ -136,6 +139,19 @@ Plug 'vim-scripts/cool.vim'
 
 " Fish script support
 Plug 'dag/vim-fish'
+
+" YCM, the behemoth
+function! BuildYCM(info)
+  " info is a dictionary with 3 fields
+  " - name:   name of the plugin
+  " - status: 'installed', 'updated', or 'unchanged'
+  " - force:  set on PlugInstall! or PlugUpdate!
+  if a:info.status == 'installed' || a:info.force
+    !./install.py
+  endif
+endfunction
+
+Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 
 " }}}
 
