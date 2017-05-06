@@ -51,6 +51,7 @@ map k gk
 
 nmap <silent> <leader>ev :edit $MYVIMRC<CR>
 nmap <silent> <leader>sv :source $MYVIMRC<CR>
+nmap <silent> <leader>fff :FormatCode<CR>
 
 nnoremap <F6> :set hlsearch!<CR>
 " }}}
@@ -77,6 +78,12 @@ Plug 'jiangmiao/auto-pairs'
 " Motion on crack
 Plug 'justinmk/vim-sneak' " {
     let g:sneak#streak = 1
+" }
+
+" Parameter swapping voodoo
+Plug 'AndrewRadev/sideways.vim' " {
+  nnoremap <leader>sh :SidewaysLeft<cr>
+  nnoremap <leader>sl :SidewaysRight<cr>
 " }
 
 " Async fuzzy finder
@@ -136,6 +143,9 @@ Plug 'vim-scripts/cool.vim'
 
 " Fish script support
 Plug 'dag/vim-fish'
+
+" Auto formatting
+Plug 'google/vim-codefmt'
 
 " }}}
 
