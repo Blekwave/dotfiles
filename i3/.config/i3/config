@@ -8,7 +8,7 @@ set $term "termite"
 set $launcher exec fish -c "rofi -show run -hlbg \"#172635\" -bc \"#172635\" -fg \"#172635\" -font \"Droid Sans Italic 16\" -o 85"
 set $regionscreenshot exec fish -c "maim -s --bordersize=1 ~/screenshots/(date +%F-%T).png"
 font pango:Droid Sans 9
-set $lock i3lock
+set $lock "i3lock -c 222222"
 
 
 # STARTUP APPLICATIONS
@@ -16,6 +16,25 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id compton
 exec --no-startup-id udiskie -q2nas
 
+
+# MEDIA KEYS
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec mpc volume +1
+bindsym XF86AudioLowerVolume exec mpc volume -1
+# bindsym XF86AudioMute exec
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+# Touchpad controls
+# bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
+
+# Media player controls
+bindsym XF86AudioPlay exec mpc toggle
+bindsym XF86AudioPause exec mpc toggle
+bindsym XF86AudioNext exec mpc next
+bindsym XF86AudioPrev exec mpc prev
 
 # APPEARANCE
 hide_edge_borders both
@@ -68,7 +87,7 @@ floating_modifier $mod
 bindsym $mod+space focus mode_toggle
 
 bindsym $mod+a focus parent
-#bindsym $mod+d focus child (DISABLED)
+bindsym $mod+Shift+a focus child
 
 
 # WORKSPACE BINDINGS

@@ -1,0 +1,6 @@
+autoload/
+plugged/
+colors/
+work.vim
+cache/
+.netrwhist
