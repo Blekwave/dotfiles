@@ -1,0 +1,1 @@
+/home/blek/.config/fisherman/bass/functions/bass.fish

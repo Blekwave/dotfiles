@@ -1,0 +1,1 @@
+/home/blek/.config/fisherman/nvm/__nvm_can_run.fish

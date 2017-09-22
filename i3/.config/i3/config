@@ -13,14 +13,17 @@ set $lock "i3lock -c 222222"
 
 # STARTUP APPLICATIONS
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id compton
+exec --no-startup-id compton -CG
 exec --no-startup-id udiskie -q2nas
 
 
 # MEDIA KEYS
+
+set $mpc mpc -h ~/.mpd/socket
+
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec mpc volume +1
-bindsym XF86AudioLowerVolume exec mpc volume -1
+bindsym XF86AudioRaiseVolume exec $mpc volume +1
+bindsym XF86AudioLowerVolume exec $mpc volume -1
 # bindsym XF86AudioMute exec
 
 # Sreen brightness controls
@@ -31,10 +34,10 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 # bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
 # Media player controls
-bindsym XF86AudioPlay exec mpc toggle
-bindsym XF86AudioPause exec mpc toggle
-bindsym XF86AudioNext exec mpc next
-bindsym XF86AudioPrev exec mpc prev
+bindsym XF86AudioPlay exec $mpc toggle
+bindsym XF86AudioPause exec $mpc toggle
+bindsym XF86AudioNext exec $mpc next
+bindsym XF86AudioPrev exec $mpc prev
 
 # APPEARANCE
 hide_edge_borders both

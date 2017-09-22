@@ -7,6 +7,8 @@ set -g -x fish_greeting ''
 
 set -g -x PATH /usr/local/bin $PATH
 
+set -g -x PATH /home/blek/.gem/ruby/2.4.0/bin $PATH
+
 # Load code on startup
 set includes_dir $HOME/.config/fish/include
 for file in $includes_dir/*.fish
@@ -25,3 +27,5 @@ end
 set -g fish_prompt_pwd_dir_length 6
 
 set -gx TERM xterm-256color
+
+set -gx MPD_HOST ~/.mpd/socket

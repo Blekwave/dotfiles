@@ -1,0 +1,1 @@
+/home/blek/.config/fisherman/nvm/node.fish
